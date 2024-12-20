@@ -2,100 +2,221 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - [Your Name]</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .project {
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 40px;
-        }
-        footer a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/3af8168f53.js" crossorigin="anonymous"></script>
+    <title>Nithisha Sathishkumar's Portfolio</title>
 </head>
 <body>
-    <header>
-        <h1>[Your Name]</h1>
-        <p>Software Developer | [Your Specialization]</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="image/IMG_7253.jpg" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#project">Project</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi! I'm [Your Name], a passionate software developer specializing in [your area of expertise]. I love building innovative and impactful solutions using [list technologies/tools].</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="project">
-            <h3>Project Title 1</h3>
-            <p>Description of the project, its features, and impact. Built using [list technologies].</p>
-            <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
+            <div class="header-text">
+                <h1>Hello There, <br>I'm <span>Nithisha Sathishkumar</span></h1>
+                <p>Full Stack Developer</p>
+            </div>
         </div>
+    </div>
 
-        <div class="project">
-            <h3>Project Title 2</h3>
-            <p>Description of the project, its features, and impact. Built using [list technologies].</p>
-            <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+    <!-- About -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./image/nithisha.jpg" width="400" height="500">
+                </div>
+                <div class="about-col-2">
+                    <h2 class="sub-title">About Me</h2>
+                    <br>
+                    <p>Hi! I'm Nithisha Sathishkumar, a passionate software developer specializing in full-stack development, artificial intelligence, and app development. I am dedicated to building innovative solutions to solve real-world problems.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <!-- <li><span>UI/UX</span><br>Designing Web/App Interfaces with tools like Figma and Lucidchart</li>
+                            <li><span>Web Development</span><br>Building responsive web applications using HTML, CSS, JavaScript, React, Node.js, and TypeScript</li>
+                            <li><span>App Development</span><br>Developing Android/iOS apps using Swift and React native</li>
+                            <li><span>Programming Languages</span><br>Proficient in Python, C++, Java, and Swift</li>
+                            <li><span>Backend Development</span><br>Experienced with SQL, PostgreSQL, and MySQL</li>
+                            <li><span>AI & Machine learning</span><br>Expertise in TensorFlow, PyTorch, and computer vision</li>
+                            <li><span>Tools & Platforms</span><br>Docker, Git, Visual Studio Code, Bash, Tableau, Azure</li>
+                        -->
+
+                            <li><span>Programming Languages:</span> Python, C++, Java, Swift</li>
+                            <li><span>Web Development:</span> HTML, CSS, JavaScript, React, Node.js, TypeScript</li>
+                            <li><span>AI & Machine Learning:</span> TensorFlow, PyTorch, Computer Vision</li>
+                            <li><span>Tools & Platforms:</span> Docker, Git, Visual Studio Code, Azure, Tableau</li>
+                            <li><span>UI/UX Design:</span> Figma, Lucidchart</li>
+                            <li><span>Database:</span> SQL, PostgreSQL, MySQL</li>
+                            <li><span>Operating Systems:</span> Linux, Windows, macOS</li>
+
+                        </ul>
+                    </div>
+                    <div class="tab-contents"  id="experience">
+                        <ul>
+                            <li><span>Mar 2024 - Dec 2024</span><br>Student Leader (Peer Coach): Facilitated the transition of 40+ first-year students, providing academic and personal guidance</li>
+                            <li><span>Mar 2022 - Jun 2023</span><br>CS Teaching Assistant: Collaborated with CS professionals to teach programming basics, improving engagement for 35+ students</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents"  id="education">
+                        <ul>
+                            <li><span>2025</span><br>Bachelor of Science in Computer Science & Software Engineering, University of Washington Bothell (GPA: 3.87)</li>
+                            <li><span>2022</span><br>Running Start, Cascadia Community College (GPA: 3.91)</li>
+                            <li><span>2022</span><br>High School Diploma, Bothell High School (GPA: 3.85)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+        <!-- Services -->
+        <!-- <div id="services">
+            <div class="container">
+                <h2 class="sub-title">Services</h2>
+                <div class="services-list">
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Web Design</h2>
+                        <p>hfjfhjfhjfhfjhfjfhjfhfjfhjfhfjhfjhfjfhfjhfjhfjhfj</p>
+                        <a href="#">Learn more</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-crop"></i>
+                        <h2>UI/UX Design</h2>
+                        <p>hfjfhjfhjfhfjhfjfhjfhfjfhjfhfjhfjhfjfhfjhfjhfjhfj</p>
+                        <a href="#">Learn more</a>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-app-store-ios"></i>
+                        <h2>App Design</h2>
+                        <p>hfjfhjfhjfhfjhfjfhjfhfjfhjfhfjhfjhfjfhfjhfjhfjhfj</p>
+                        <a href="#">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Feel free to reach out!</p>
-        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-        <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-    </section>
+    <!-- Portfolio -->
+    <div id="portfolio">
+        <div class="container">
+            <h2 class="sub-title">My Projects</h2>
+            <div class="work-list">
+                <div class="work">
+                    <img src="./image/nithisha.jpg" alt="work1">
+                    <div class="layer">
+                        <h3>SignTalk</h3>
+                        <p>Developed an app to bridge communication gaps for deaf individuals, using AI/ML to recognize sign language gestures via a mobile camera, converting them to text and audio in real time.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./image/nithisha.jpg" alt="work2">
+                    <div class="layer">
+                        <h3>MentorMe Tutoring Platform</h3>
+                        <p>Created a web-based platform to connect users with tutors, integrating APIs for seamless sessions, payment processing, and personalized user profiles.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./image/nithisha.jpg" alt="work3">
+                    <div class="layer">
+                        <h3>Weather Application</h3>
+                        <p>Built a website providing real-time weather updates for 100+ locations using OpenWeather API, with features like dark mode.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="./image/nithisha.jpg" alt="work3">
+                    <div class="layer">
+                        <h3>Hotel Reservation System</h3>
+                        <p>Designed a PostgreSQL database to store customer and employee data, improving query speed by 20% through optimized queries.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn"> See More</a>
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Nithisha Sathishkumar. Built with &hearts; and code. <a href="#">Back to top</a></p>
-    </footer>
+    <!-- contact -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact</h1>
+                    <h4>Feel free to reach out!</h4>
+                    <p class="email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="sathishkumar.nithisha@gmail.com"> sathishkumar.nithisha@gmail.com</a>
+                    </p>
+                    <p><i class="fa-solid fa-phone"></i> 425-364-0364</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/NithishaSathishkumar" alt="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com/in/nithishasathishkumar" alt="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="myResume/Nithisha_Resume_Portfolio.pdf" download class="btn btn2">Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your name" required>
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <textarea name="Message" rows="6" placeholder="Your message"></textarea>
+                        <button type="submit" class="btn btn2">Connect w/ Nithisha</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer class="copyright">
+            <p>&copy; 2024 Nithisha Sathishkumar. Built with &hearts; and code. <a href="#">Back to top</a></p>
+        </footer> 
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0px"
+        }
+
+        function closemenu(){
+            sidemenu.style.right = "-200px"
+        }
+
+        
+        
+    </script>
 </body>
 </html>
