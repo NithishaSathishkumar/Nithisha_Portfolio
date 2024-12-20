@@ -369,6 +369,63 @@ form btn2{
 .copyright p a{
     color: #ff004f;
 }
+/* roles */
+.typewriter{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 40px;
+    font-weight: 600;
+    min-width:20px;
+}
+
+.typewriter span{
+    position: relative;
+}
+
+.typewriter span::before{
+    content: "Full Stack Developer";
+    color:#ff004f;
+    animation: words 20s infinite;
+}
+
+.typewriter span::after{
+    content: "";
+    /* background-color: #080808; */
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8px;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-right: 3px solid #ff004f;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Front-End Developer";
+    }
+
+    21%, 40%{
+        content: "Back-End Developer";
+    }
+
+    41%, 60%{
+        content: "Sofware Developer";
+    }
+
+    61%, 80%{
+        content: "Mobile Application Developer";
+    }
+
+    81%, 100%{
+        content: "Web Developer";
+    }
+}
 
 /* Css for small Screens */
 nav .fa-solid{
