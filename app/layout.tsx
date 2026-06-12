@@ -1,12 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono, Syne } from "next/font/google";
+import { Epilogue, JetBrains_Mono, Source_Serif_4 } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
-const fontDisplay = Syne({
+const fontDisplay = Epilogue({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+  weight: ["500", "600", "700"],
 });
 
 const fontMono = JetBrains_Mono({
@@ -15,10 +16,11 @@ const fontMono = JetBrains_Mono({
   display: "swap",
 });
 
-const fontSans = Inter({
+const fontSerif = Source_Serif_4({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-serif",
   display: "swap",
+  weight: ["400", "600"],
 });
 
 export const metadata: Metadata = {
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#fff9f2",
+  themeColor: "#fff8f1",
 };
 
 export default function RootLayout({
@@ -41,7 +43,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable}`}
+      className={`${fontDisplay.variable} ${fontSerif.variable} ${fontMono.variable}`}
     >
       <body>
         <Script

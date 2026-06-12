@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { HeroParallax } from "./HeroParallax";
+import { HeroEditorial } from "./HeroEditorial";
 import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
+  { href: "#portfolio", label: "Work" },
   { href: "#about", label: "About" },
-  { href: "#portfolio", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -27,19 +27,19 @@ export function Header() {
         <div className="topbar__inner">
           <Link
             href="#header"
-            className="logo-link"
+            className="logo-link--editorial"
             onClick={() => setMenuOpen(false)}
           >
             <Image
               src="/image/N-2.png"
-              alt="Nithisha — home"
-              width={40}
-              height={40}
-              className="logo-mark"
+              alt=""
+              width={32}
+              height={32}
+              className="logo-mark logo-mark--editorial"
               priority
             />
-            <span className="logo-text" aria-label="Nithisha">
-              Nith<span className="logo-text--caps">IS</span>ha.
+            <span className="logo-wordmark" aria-label="Nithisha Sathishkumar">
+              Nithisha
             </span>
           </Link>
 
@@ -59,7 +59,7 @@ export function Header() {
             className={`nav-links-wrap ${menuOpen ? "is-open" : ""}`}
             aria-label="Primary"
           >
-            <ul className="nav-links">
+            <ul className="nav-links nav-links--editorial">
               {navLinks.map(({ href, label }) => (
                 <li key={href + label}>
                   <a href={href} onClick={() => setMenuOpen(false)}>
@@ -92,7 +92,7 @@ export function Header() {
         role="presentation"
       />
 
-      <HeroParallax />
+      <HeroEditorial />
     </>
   );
 }
