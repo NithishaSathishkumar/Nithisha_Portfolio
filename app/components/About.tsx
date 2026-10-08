@@ -2,6 +2,8 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { experiences } from "@/app/data/experiences";
 
 const viewport = { once: true, amount: 0.2 as const };
 
@@ -254,48 +256,28 @@ export function About() {
           </motion.div>
 
           <div className="experience-grid">
-            {[
-              {
-                period: "Jun 2025 – Present",
-                title: "Full Stack Developer",
-                org: "Vitals Vault",
-                description:
-                  "Led development of revenue-critical features across checkout, onboarding, and scheduling using React, Next.js, TailwindCSS, Framer Motion, and Supabase — supporting 1,000+ active users. Built serverless AWS Lambda pipeline automating 1,000+ onboarding submissions, reducing manual operations by 80%. Developed multi-step Stripe checkout processing 1,000+ payments. Integrated AI-powered workflows using OpenAI and Gemini APIs.",
-              },
-              {
-                period: "Mar 2025 – Jun 2025",
-                title: "Full Stack Web Developer",
-                org: "Stem of Other",
-                description:
-                  "Architected a STEM education game platform using React, Next.js, and Python, serving 2,000+ K–12 students nationwide. Built and optimized 15+ cross-platform features improving performance by 30%. Integrated Clerk authentication and Stripe payments supporting 100+ monthly transactions. Onboarded and mentored 5+ developers while enforcing coding standards.",
-              },
-              {
-                period: "Mar 2024 – Dec 2024",
-                title: "Peer Coach & Student Leader",
-                org: "University of Washington Bothell",
-                description:
-                  "Led onboarding for 40+ first-year CS students — delivered 1-on-1 mentorship, academic guidance, and career planning sessions resulting in 95% retention rate.",
-              },
-              {
-                period: "Mar 2022 – Jun 2023",
-                title: "CS Teaching Assistant",
-                org: "University of Washington Bothell",
-                description:
-                  "Supported 35+ students in data structures & algorithms — created supplemental materials, held office hours, and improved average exam scores by 15%.",
-              },
-            ].map((exp, i) => (
+            {experiences.map((exp, i) => (
               <motion.div
-                key={exp.title}
-                className="experience-card"
+                key={exp.slug}
                 initial={reduceMotion ? undefined : fadeUp}
                 whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
                 viewport={viewport}
                 transition={{ ...springTrans, delay: i * 0.1 }}
               >
-                <span className="experience-card__period">{exp.period}</span>
-                <h3 className="experience-card__title">{exp.title}</h3>
-                <span className="experience-card__org">{exp.org}</span>
-                <p className="experience-card__desc">{exp.description}</p>
+                <Link
+                  href={`/experience/${exp.slug}`}
+                  className="experience-card experience-card--link"
+                  aria-label={`View details for ${exp.title} at ${exp.org}`}
+                >
+                  <span className="experience-card__period">{exp.period}</span>
+                  <h3 className="experience-card__title">{exp.title}</h3>
+                  <span className="experience-card__org">{exp.org}</span>
+                  <p className="experience-card__desc">{exp.summary}</p>
+                  <span className="experience-card__cta">
+                    View features & data
+                    <i className="fa-solid fa-arrow-right" aria-hidden />
+                  </span>
+                </Link>
               </motion.div>
             ))}
           </div>
